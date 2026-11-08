@@ -1,23 +1,57 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/landing/Navbar";
+import { Hero } from "@/components/landing/Hero";
+import { HowItWorks } from "@/components/landing/HowItWorks";
+import { Benefits } from "@/components/landing/Benefits";
+import { Organizer } from "@/components/landing/Organizer";
+import { EventTypes } from "@/components/landing/EventTypes";
+import { Participant } from "@/components/landing/Participant";
+import { Pricing } from "@/components/landing/Pricing";
+import { Privacy } from "@/components/landing/Privacy";
+import { Faq } from "@/components/landing/Faq";
+import { FinalCta } from "@/components/landing/FinalCta";
+import { Footer } from "@/components/landing/Footer";
+import { BackToTop } from "@/components/landing/BackToTop";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Kapotret — Satu momen. Banyak sudut." },
+      {
+        name: "description",
+        content:
+          "Bagikan satu QR dan kumpulkan foto dari setiap tamu acaramu dalam satu album. Tanpa install aplikasi, tanpa akun.",
+      },
+      { property: "og:title", content: "Kapotret — Satu momen. Banyak sudut." },
+      {
+        property: "og:description",
+        content: "Album foto bersama untuk setiap acara, cukup dengan satu QR.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <HowItWorks />
+        <Benefits />
+        <Organizer />
+        <EventTypes />
+        <Participant />
+        <Pricing />
+        <Privacy />
+        <Faq />
+        <FinalCta />
+      </main>
+      <Footer />
+      <BackToTop />
     </div>
   );
 }
