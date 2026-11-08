@@ -30,7 +30,7 @@ export function HowItWorks() {
 
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {hostSteps.map((s, i) => {
-            const Icon = icons[i];
+            const Icon = icons[i] ?? icons[0]!;
             return (
               <Reveal key={s.no} delay={i * 120}>
                 <button

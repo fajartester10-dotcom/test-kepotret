@@ -7,7 +7,7 @@ import { formatRupiah, pricingTiers } from "./content";
 
 export function Pricing() {
   const [idx, setIdx] = useState(0);
-  const tier = pricingTiers[idx];
+  const tier = pricingTiers[idx] ?? pricingTiers[0]!;
   const free = tier.price === 0;
 
   return (
@@ -39,7 +39,7 @@ export function Pricing() {
               min={0}
               max={pricingTiers.length - 1}
               step={1}
-              onValueChange={([v]) => setIdx(v)}
+              onValueChange={([v]) => setIdx(v ?? 0)}
               className="relative mt-8 flex h-6 w-full touch-none select-none items-center"
               aria-label="Jumlah peserta"
             >

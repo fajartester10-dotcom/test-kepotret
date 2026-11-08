@@ -32,7 +32,7 @@ export function Privacy() {
               </DialogDescription>
               <ul className="space-y-3">
                 {privacyCards.map((c, i) => {
-                  const Icon = icons[i];
+                  const Icon = icons[i] ?? icons[0]!;
                   return (
                     <li key={c.title} className="flex gap-4 rounded-2xl bg-muted p-4">
                       <Icon className="mt-0.5 h-5 w-5 shrink-0 text-sky-deep" />
@@ -50,7 +50,7 @@ export function Privacy() {
 
         <div className="grid gap-4 sm:grid-cols-3">
           {privacyCards.map((c, i) => {
-            const Icon = icons[i];
+            const Icon = icons[i] ?? icons[0]!;
             return (
               <Reveal key={c.title} delay={i * 110}>
                 <div className="group h-full rounded-3xl border border-border bg-background p-6 shadow-soft hover-lift hover:border-sky-strong">

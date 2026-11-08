@@ -43,7 +43,7 @@ export function Benefits() {
 
           <ul className="grid content-center gap-3">
             {benefits.map((b, i) => {
-              const Icon = icons[i];
+              const Icon = icons[i] ?? icons[0]!;
               return (
                 <Reveal as="li" key={b.title} delay={i * 90}>
                   <div className="group flex gap-5 rounded-3xl border border-transparent p-5 transition-all duration-300 hover:border-border hover:bg-background hover:shadow-card">

@@ -21,7 +21,7 @@ export function Organizer() {
 
             <div className="grid gap-4 sm:grid-cols-2">
               {organizerFeatures.map((f, i) => {
-                const Icon = icons[i];
+                const Icon = icons[i] ?? icons[0]!;
                 return (
                   <div
                     key={f.title}
