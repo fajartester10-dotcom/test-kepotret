@@ -222,3 +222,10 @@ export const footerColumns = [
 export function formatRupiah(n: number) {
   return "Rp" + n.toLocaleString("id-ID");
 }
+
+/** Starter questions shown in the empty AI assistant window. */
+export const chatSuggestions = [
+  "Bagaimana cara membuat album untuk acaraku?",
+  "Apakah tamu harus install aplikasi?",
+  "Berapa harga untuk 100 peserta?",
+];
