@@ -33,7 +33,7 @@ export function Footer() {
             ))}
           </div>
         </div>
-        <div className="mt-14 flex flex-col gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-3 border-t border-border pt-6 pr-16 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:pr-20">
           <p>© {new Date().getFullYear()} {brand}. All rights reserved.</p>
           <p>Dibuat untuk setiap momen bersama.</p>
         </div>
