@@ -24,7 +24,7 @@ function Screen({ index }: { index: number }) {
   if (index === 2)
     return (
       <div className="grid flex-1 place-items-center">
-        <div className="grid h-16 w-16 place-items-center rounded-2xl bg-ink text-ink-foreground">
+        <div className="grid h-16 w-16 place-items-center rounded-2xl bg-contrast text-contrast-foreground">
           <Camera className="h-6 w-6" />
         </div>
       </div>
@@ -59,7 +59,7 @@ export function Participant() {
                 {s.no}
               </span>
               <div className="mt-6 flex h-52 w-32 flex-col rounded-[1.6rem] border-4 border-ink-soft bg-muted p-3 shadow-lift transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-[-2deg] sm:w-36">
-                <div className="mx-auto h-1 w-8 rounded-full bg-ink/70" />
+                <div className="mx-auto h-1 w-8 rounded-full bg-foreground/60" />
                 <Screen index={i} />
               </div>
               <h3 className="mt-6 text-base font-semibold text-ink-foreground">{s.title}</h3>

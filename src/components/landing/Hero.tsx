@@ -77,7 +77,7 @@ export function Hero() {
 
           {/* Phone mockup */}
           <div className="absolute left-1/2 top-1/2 w-[46%] max-w-[230px] -translate-x-1/2 -translate-y-1/2 rounded-[2.2rem] border-[6px] border-ink bg-background p-3 shadow-lift">
-            <div className="mx-auto h-1.5 w-12 rounded-full bg-ink/80" />
+            <div className="mx-auto h-1.5 w-12 rounded-full bg-foreground/80" />
             <div className="mt-4 flex items-center justify-between text-muted-foreground">
               <Smartphone className="h-3.5 w-3.5" />
               <span className="h-2 w-2 rounded-full bg-lime-deep" />

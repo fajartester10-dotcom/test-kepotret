@@ -55,7 +55,7 @@ export function Pricing() {
                   key={t.capacity}
                   type="button"
                   onClick={() => setIdx(i)}
-                  className={`rounded px-1 transition-colors hover:text-ink ${i === idx ? "text-foreground" : ""}`}
+                  className={`rounded px-1 transition-colors hover:text-foreground ${i === idx ? "text-foreground" : ""}`}
                 >
                   {t.capacity >= 1000 ? `${t.capacity / 1000}rb` : t.capacity}
                 </button>
