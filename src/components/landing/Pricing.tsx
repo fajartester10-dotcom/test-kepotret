@@ -11,9 +11,9 @@ export function Pricing() {
   const free = tier.price === 0;
 
   return (
-    <section id="harga" className="relative overflow-hidden bg-sky-fade py-24 sm:py-32">
+    <section id="harga" className="relative overflow-hidden bg-sky-fade py-32 sm:py-40 lg:py-52">
       <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-sky/80 blur-3xl" />
-      <div className="container-page relative grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div className="container-page relative grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24 lg:items-center">
         <Reveal>
           <SectionHeading
             eyebrow="Harga"
@@ -23,9 +23,9 @@ export function Pricing() {
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="rounded-[2rem] border border-border bg-background p-6 shadow-lift sm:p-9">
+          <div className="rounded-[2rem] border border-border bg-background p-8 shadow-lift sm:p-12 lg:p-14">
             <div className="flex items-center justify-between gap-4">
-              <p className="flex items-center gap-2 text-sm font-medium text-ink">
+              <p className="flex items-center gap-2 text-sm font-medium text-foreground">
                 <Users className="h-4 w-4 text-sky-deep" />
                 Berapa banyak peserta yang ikut memotret?
               </p>
@@ -40,7 +40,7 @@ export function Pricing() {
               max={pricingTiers.length - 1}
               step={1}
               onValueChange={([v]) => setIdx(v ?? 0)}
-              className="relative mt-8 flex h-6 w-full touch-none select-none items-center"
+              className="relative mt-10 flex h-6 w-full touch-none select-none items-center"
               aria-label="Jumlah peserta"
             >
               <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-sky">
@@ -55,19 +55,19 @@ export function Pricing() {
                   key={t.capacity}
                   type="button"
                   onClick={() => setIdx(i)}
-                  className={`rounded px-1 transition-colors hover:text-ink ${i === idx ? "text-ink" : ""}`}
+                  className={`rounded px-1 transition-colors hover:text-ink ${i === idx ? "text-foreground" : ""}`}
                 >
                   {t.capacity >= 1000 ? `${t.capacity / 1000}rb` : t.capacity}
                 </button>
               ))}
             </div>
 
-            <div className="mt-8 grid gap-6 border-t border-border pt-8 sm:grid-cols-[1fr_auto] sm:items-end">
+            <div className="mt-12 grid gap-8 border-t border-border pt-10 sm:grid-cols-[1fr_auto] sm:items-end">
               <div>
                 <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
                   {tier.capacity} peserta
                 </p>
-                <p key={tier.price} className="mt-1 animate-fade-up text-4xl font-semibold tracking-tight text-ink">
+                <p key={tier.price} className="mt-1 animate-fade-up text-4xl font-semibold tracking-tight text-foreground">
                   {free ? "Gratis" : formatRupiah(tier.price)}
                 </p>
                 <ul className="mt-4 space-y-2">

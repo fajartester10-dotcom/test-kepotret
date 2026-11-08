@@ -18,10 +18,10 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         brand:
           "rounded-full bg-lime text-ink font-semibold shadow-glow hover:-translate-y-0.5 hover:shadow-lift active:translate-y-0 [&_svg]:transition-transform hover:[&_svg]:translate-x-0.5",
-        ink: "rounded-full bg-ink text-ink-foreground font-semibold hover:-translate-y-0.5 hover:bg-ink-soft hover:shadow-lift active:translate-y-0",
-        soft: "rounded-full border border-border bg-background/70 text-ink font-medium backdrop-blur hover:border-sky-strong hover:bg-sky-soft",
+        ink: "rounded-full bg-contrast text-contrast-foreground font-semibold hover:-translate-y-0.5 hover:bg-contrast-soft hover:shadow-lift active:translate-y-0",
+        soft: "rounded-full border border-border bg-background/70 text-foreground font-medium backdrop-blur hover:border-sky-strong hover:bg-sky-soft",
         "ghost-ink":
-          "rounded-full text-ink font-medium hover:bg-sky-soft [&_svg]:transition-transform hover:[&_svg]:translate-x-0.5",
+          "rounded-full text-foreground font-medium hover:bg-sky-soft [&_svg]:transition-transform hover:[&_svg]:translate-x-0.5",
         "outline-light":
           "rounded-full border border-ink-foreground/20 text-ink-foreground font-medium hover:border-lime hover:text-lime",
       },

@@ -5,10 +5,10 @@ import { images } from "./content";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-hero pb-20 pt-32 sm:pt-36 lg:pb-28 lg:pt-44">
+    <section id="top" className="relative overflow-hidden bg-hero pb-28 pt-40 sm:pb-36 sm:pt-48 lg:pb-48 lg:pt-60">
       <div className="pointer-events-none absolute inset-0 grid-dots opacity-40 [mask-image:radial-gradient(60%_60%_at_70%_30%,black,transparent)]" />
 
-      <div className="container-page relative grid items-center gap-14 lg:grid-cols-[1.05fr_1fr] lg:gap-10">
+      <div className="container-page relative grid items-center gap-20 lg:grid-cols-[1.05fr_1fr] lg:gap-20">
         {/* Copy */}
         <div className="animate-fade-up">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground shadow-soft backdrop-blur">
@@ -16,25 +16,25 @@ export function Hero() {
             Dokumentasi acara berbasis QR untuk semua tamu
           </span>
 
-          <h1 className="mt-6 text-[2.75rem] font-semibold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-[4.25rem]">
+          <h1 className="mt-8 text-[2.75rem] font-semibold leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-[4.25rem]">
             Satu momen.
             <br />
             Banyak sudut<span className="text-lime-deep">.</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Kumpulkan semua momen dari sudut pandang setiap tamu dalam satu album. Bagikan satu QR dan
             biarkan orang-orang di acaramu memotret langsung dari HP.
           </p>
 
-          <ul className="mt-7 grid max-w-xl gap-3 sm:grid-cols-2">
+          <ul className="mt-10 grid max-w-xl gap-4 sm:grid-cols-2">
             {[
               { icon: Images, text: "Foto langsung masuk ke satu album" },
               { icon: UserX, text: "Tanpa install aplikasi & tanpa akun" },
             ].map(({ icon: Icon, text }) => (
               <li
                 key={text}
-                className="flex items-center gap-3 rounded-2xl border border-border bg-background/70 p-3 text-sm font-medium text-ink shadow-soft backdrop-blur"
+                className="flex items-center gap-3 rounded-2xl border border-border bg-background/70 p-3 text-sm font-medium text-foreground shadow-soft backdrop-blur"
               >
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-sky text-sky-deep">
                   <Icon className="h-4 w-4" />
@@ -44,7 +44,7 @@ export function Hero() {
             ))}
           </ul>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Button asChild variant="brand" size="pill-lg">
               <a href="#harga">
                 Buat Album Gratis <ArrowRight />
@@ -83,9 +83,9 @@ export function Hero() {
               <span className="h-2 w-2 rounded-full bg-lime-deep" />
             </div>
             <div className="mt-3 rounded-2xl bg-sky-soft p-3 text-center">
-              <p className="text-[0.7rem] font-semibold leading-snug text-ink">Momen dari berbagai sudut</p>
+              <p className="text-[0.7rem] font-semibold leading-snug text-foreground">Momen dari berbagai sudut</p>
               <div className="mx-auto mt-3 grid h-20 w-20 place-items-center rounded-xl border border-dashed border-sky-strong bg-background">
-                <QrCode className="h-12 w-12 text-ink" strokeWidth={1.5} />
+                <QrCode className="h-12 w-12 text-foreground" strokeWidth={1.5} />
               </div>
               <p className="mt-2 text-[0.6rem] text-muted-foreground">Scan untuk ikut memotret</p>
             </div>
@@ -94,7 +94,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="absolute -bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-xs font-semibold text-ink shadow-card">
+          <div className="absolute -bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-xs font-semibold text-foreground shadow-card">
             <span className="text-lime-deep">01</span> Bagikan QR
           </div>
         </div>

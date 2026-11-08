@@ -63,8 +63,8 @@ export function SectionHeading({
       </span>
       <h2
         className={cn(
-          "mt-4 text-3xl font-semibold leading-[1.15] tracking-tight sm:text-4xl lg:text-[2.6rem]",
-          dark ? "text-ink-foreground" : "text-ink",
+          "mt-5 text-3xl font-semibold leading-[1.15] tracking-tight sm:text-4xl lg:text-[2.6rem]",
+          dark ? "text-ink-foreground" : "text-foreground",
         )}
       >
         {title}
@@ -72,7 +72,7 @@ export function SectionHeading({
       {description && (
         <p
           className={cn(
-            "mt-4 text-base leading-relaxed sm:text-[1.05rem]",
+            "mt-6 text-base leading-relaxed sm:text-[1.05rem]",
             dark ? "text-ink-muted" : "text-muted-foreground",
           )}
         >

@@ -50,7 +50,7 @@ export function Navbar() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="relative rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-sky-soft hover:text-ink"
+                  className="relative rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-sky-soft hover:text-foreground"
                 >
                   {item.label}
                 </a>
@@ -62,7 +62,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setLang((l) => (l === "ID" ? "EN" : "ID"))}
-              className="hidden h-9 items-center gap-1.5 rounded-full px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-sky-soft hover:text-ink sm:inline-flex"
+              className="hidden h-9 items-center gap-1.5 rounded-full px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-sky-soft hover:text-foreground sm:inline-flex"
               aria-label="Ganti bahasa"
             >
               <Globe className="h-4 w-4" />
@@ -70,7 +70,7 @@ export function Navbar() {
             </button>
             <a
               href="#"
-              className="hidden h-9 items-center rounded-full px-4 text-sm font-medium text-ink transition-colors hover:bg-sky-soft md:inline-flex"
+              className="hidden h-9 items-center rounded-full px-4 text-sm font-medium text-foreground transition-colors hover:bg-sky-soft md:inline-flex"
             >
               Masuk
             </a>
@@ -82,7 +82,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setOpen(true)}
-              className="grid h-10 w-10 place-items-center rounded-full border border-border bg-background text-ink transition-colors hover:bg-sky-soft lg:hidden"
+              className="grid h-10 w-10 place-items-center rounded-full border border-border bg-background text-foreground transition-colors hover:bg-sky-soft lg:hidden"
               aria-label="Buka menu"
             >
               <Menu className="h-5 w-5" />
@@ -117,7 +117,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="grid h-10 w-10 place-items-center rounded-full bg-muted text-ink transition-colors hover:bg-sky"
+              className="grid h-10 w-10 place-items-center rounded-full bg-muted text-foreground transition-colors hover:bg-sky"
               aria-label="Tutup menu"
             >
               <X className="h-5 w-5" />
@@ -129,7 +129,7 @@ export function Navbar() {
                 <a
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="flex items-center justify-between rounded-2xl px-4 py-3 text-base font-medium text-ink transition-colors hover:bg-sky-soft"
+                  className="flex items-center justify-between rounded-2xl px-4 py-3 text-base font-medium text-foreground transition-colors hover:bg-sky-soft"
                 >
                   {item.label}
                   <ArrowRight className="h-4 w-4 text-muted-foreground" />
@@ -141,7 +141,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setLang((l) => (l === "ID" ? "EN" : "ID"))}
-              className="inline-flex h-11 items-center gap-1.5 rounded-full border border-border px-4 text-sm font-medium text-ink"
+              className="inline-flex h-11 items-center gap-1.5 rounded-full border border-border px-4 text-sm font-medium text-foreground"
             >
               <Globe className="h-4 w-4" />
               {lang}

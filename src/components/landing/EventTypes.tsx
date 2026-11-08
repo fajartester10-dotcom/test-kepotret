@@ -10,9 +10,9 @@ export function EventTypes() {
   const ev = active !== null ? eventTypes[active] : null;
 
   return (
-    <section className="bg-background py-24 sm:py-32">
+    <section className="bg-background py-32 sm:py-40 lg:py-52">
       <div className="container-page">
-        <Reveal className="grid gap-6 lg:grid-cols-2 lg:items-end">
+        <Reveal className="grid gap-8 lg:grid-cols-2 lg:items-end lg:gap-16">
           <SectionHeading eyebrow="Untuk Berbagai Acara" title="Setiap acara punya momen dari sudut yang berbeda." />
           <p className="max-w-lg text-base leading-relaxed text-muted-foreground lg:justify-self-end">
             Dari acara pribadi sampai acara besar, Kapotret membantu mengumpulkan momen dari setiap
@@ -20,7 +20,7 @@ export function EventTypes() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-20 grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mt-28 lg:grid-cols-3 lg:gap-x-10">
           {eventTypes.map((e, i) => (
             <Reveal key={e.title} delay={(i % 3) * 100}>
               <button
@@ -38,12 +38,12 @@ export function EventTypes() {
                     loading="lazy"
                     className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <span className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-background/90 text-ink shadow-soft backdrop-blur transition-all duration-300 group-hover:rotate-90 group-hover:bg-lime">
+                  <span className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-background/90 text-foreground shadow-soft backdrop-blur transition-all duration-300 group-hover:rotate-90 group-hover:bg-lime group-hover:text-ink">
                     <Plus className="h-4 w-4" />
                   </span>
                 </div>
-                <div className="px-1 pt-5">
-                  <h3 className="text-lg font-semibold text-ink transition-colors group-hover:text-lime-deep">{e.title}</h3>
+                <div className="px-1 pt-7">
+                  <h3 className="text-lg font-semibold text-foreground transition-colors group-hover:text-lime-deep">{e.title}</h3>
                   <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-muted-foreground">{e.body}</p>
                 </div>
               </button>
@@ -57,9 +57,9 @@ export function EventTypes() {
           {ev && (
             <>
               <img src={ev.image} alt={ev.title} width={1024} height={1024} className="aspect-[16/10] w-full object-cover" />
-              <div className="space-y-3 px-7 pb-7 pt-2">
+              <div className="space-y-4 px-9 pb-9 pt-4">
                 <span className="eyebrow text-lime-deep">Untuk Berbagai Acara</span>
-                <DialogTitle className="text-2xl font-semibold tracking-tight text-ink">{ev.title}</DialogTitle>
+                <DialogTitle className="text-2xl font-semibold tracking-tight text-foreground">{ev.title}</DialogTitle>
                 <DialogDescription className="text-sm leading-relaxed text-muted-foreground">{ev.body}</DialogDescription>
                 <Button asChild variant="brand" size="pill" className="mt-2 w-full">
                   <a href="#harga" onClick={() => setActive(null)}>
