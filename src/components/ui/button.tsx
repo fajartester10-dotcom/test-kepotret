@@ -18,10 +18,10 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         brand:
           "rounded-full bg-lime text-ink font-semibold shadow-glow hover:-translate-y-0.5 hover:shadow-lift active:translate-y-0 [&_svg]:transition-transform hover:[&_svg]:translate-x-0.5",
-        ink: "rounded-full bg-ink text-ink-foreground font-semibold hover:-translate-y-0.5 hover:bg-ink-soft hover:shadow-lift active:translate-y-0",
-        soft: "rounded-full border border-border bg-background/70 text-ink font-medium backdrop-blur hover:border-sky-strong hover:bg-sky-soft",
+        ink: "rounded-full bg-contrast text-contrast-foreground font-semibold hover:-translate-y-0.5 hover:bg-contrast-soft hover:shadow-lift active:translate-y-0",
+        soft: "rounded-full border border-border bg-background/70 text-foreground font-medium backdrop-blur hover:border-sky-strong hover:bg-sky-soft",
         "ghost-ink":
-          "rounded-full text-ink font-medium hover:bg-sky-soft [&_svg]:transition-transform hover:[&_svg]:translate-x-0.5",
+          "rounded-full text-foreground font-medium hover:bg-sky-soft [&_svg]:transition-transform hover:[&_svg]:translate-x-0.5",
         "outline-light":
           "rounded-full border border-ink-foreground/20 text-ink-foreground font-medium hover:border-lime hover:text-lime",
       },
@@ -30,6 +30,10 @@ const buttonVariants = cva(
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
+        xs: "h-6 rounded-md px-2 text-xs",
+        "icon-xs": "h-6 w-6",
+        "icon-sm": "h-8 w-8",
+        "icon-lg": "h-10 w-10",
         pill: "h-11 px-6 text-sm",
         "pill-lg": "h-12 px-7 text-[0.95rem]",
         "pill-sm": "h-9 px-4 text-xs",

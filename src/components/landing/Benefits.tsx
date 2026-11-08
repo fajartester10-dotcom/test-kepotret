@@ -6,7 +6,7 @@ const icons = [Hand, MousePointerClick, ShieldCheck, Users];
 
 export function Benefits() {
   return (
-    <section className="bg-sky-fade py-24 sm:py-32">
+    <section className="bg-sky-fade py-32 sm:py-40 lg:py-52">
       <div className="container-page">
         <Reveal>
           <SectionHeading
@@ -17,8 +17,8 @@ export function Benefits() {
           />
         </Reveal>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
-          <Reveal className="group relative min-h-[380px] overflow-hidden rounded-[2rem] shadow-card">
+        <div className="mt-20 grid gap-14 lg:mt-28 lg:grid-cols-[1.1fr_1fr] lg:gap-24">
+          <Reveal className="group relative min-h-[440px] lg:min-h-[520px] overflow-hidden rounded-[2rem] shadow-card">
             <div className="grid h-full grid-cols-[1.4fr_1fr] gap-1.5">
               <img src={images.community} alt="Warga merayakan bersama" width={1280} height={1024} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="grid grid-rows-2 gap-1.5">
@@ -41,17 +41,17 @@ export function Benefits() {
             </div>
           </Reveal>
 
-          <ul className="grid content-center gap-3">
+          <ul className="grid content-center gap-5">
             {benefits.map((b, i) => {
               const Icon = icons[i] ?? icons[0]!;
               return (
                 <Reveal as="li" key={b.title} delay={i * 90}>
-                  <div className="group flex gap-5 rounded-3xl border border-transparent p-5 transition-all duration-300 hover:border-border hover:bg-background hover:shadow-card">
-                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-background text-ink shadow-soft transition-colors duration-300 group-hover:bg-lime">
+                  <div className="group flex gap-6 rounded-3xl border border-transparent p-6 lg:p-7 transition-all duration-300 hover:border-border hover:bg-background hover:shadow-card">
+                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-background text-foreground shadow-soft transition-colors duration-300 group-hover:bg-lime group-hover:text-ink">
                       <Icon className="h-5 w-5" strokeWidth={1.8} />
                     </span>
                     <div className="min-w-0">
-                      <h3 className="text-base font-semibold text-ink">{b.title}</h3>
+                      <h3 className="text-base font-semibold text-foreground">{b.title}</h3>
                       <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{b.body}</p>
                     </div>
                   </div>

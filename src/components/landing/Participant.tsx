@@ -8,13 +8,13 @@ function Screen({ index }: { index: number }) {
   if (index === 0)
     return (
       <div className="grid flex-1 place-items-center">
-        <QrCode className="h-14 w-14 text-ink" strokeWidth={1.5} />
+        <QrCode className="h-14 w-14 text-foreground" strokeWidth={1.5} />
       </div>
     );
   if (index === 1)
     return (
       <div className="flex flex-1 flex-col justify-center gap-2.5 px-1">
-        <div className="flex items-center gap-1.5 text-[0.6rem] font-semibold text-ink">
+        <div className="flex items-center gap-1.5 text-[0.6rem] font-semibold text-foreground">
           <User className="h-3 w-3" /> Nama kamu
         </div>
         <div className="h-7 rounded-lg border border-border bg-background" />
@@ -24,7 +24,7 @@ function Screen({ index }: { index: number }) {
   if (index === 2)
     return (
       <div className="grid flex-1 place-items-center">
-        <div className="grid h-16 w-16 place-items-center rounded-2xl bg-ink text-ink-foreground">
+        <div className="grid h-16 w-16 place-items-center rounded-2xl bg-contrast text-contrast-foreground">
           <Camera className="h-6 w-6" />
         </div>
       </div>
@@ -39,7 +39,7 @@ function Screen({ index }: { index: number }) {
 
 export function Participant() {
   return (
-    <section id="peserta" className="relative overflow-hidden bg-ink-glow py-24 sm:py-32">
+    <section id="peserta" className="relative overflow-hidden bg-ink-glow py-32 sm:py-40 lg:py-52">
       <div className="container-page">
         <Reveal>
           <SectionHeading
@@ -51,7 +51,7 @@ export function Participant() {
           />
         </Reveal>
 
-        <ol className="relative mt-16 grid grid-cols-2 gap-x-5 gap-y-12 lg:grid-cols-4">
+        <ol className="relative mt-20 grid grid-cols-2 gap-x-6 gap-y-16 lg:mt-28 lg:grid-cols-4 lg:gap-x-10">
           <div className="pointer-events-none absolute left-[12%] right-[12%] top-5 hidden h-px bg-ink-foreground/15 lg:block" />
           {participantSteps.map((s, i) => (
             <Reveal as="li" key={s.no} delay={i * 110} className="group relative flex flex-col items-center text-center">
@@ -59,7 +59,7 @@ export function Participant() {
                 {s.no}
               </span>
               <div className="mt-6 flex h-52 w-32 flex-col rounded-[1.6rem] border-4 border-ink-soft bg-muted p-3 shadow-lift transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-[-2deg] sm:w-36">
-                <div className="mx-auto h-1 w-8 rounded-full bg-ink/70" />
+                <div className="mx-auto h-1 w-8 rounded-full bg-foreground/60" />
                 <Screen index={i} />
               </div>
               <h3 className="mt-6 text-base font-semibold text-ink-foreground">{s.title}</h3>
@@ -68,7 +68,7 @@ export function Participant() {
           ))}
         </ol>
 
-        <Reveal className="mt-14 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <Reveal className="mt-20 flex flex-col gap-8 lg:mt-28 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap gap-2">
             {["Tanpa install aplikasi", "Tanpa buat akun"].map((t) => (
               <span

@@ -5,10 +5,10 @@ import { images } from "./content";
 
 export function FinalCta() {
   return (
-    <section className="bg-background pb-24">
+    <section className="bg-background pb-32 lg:pb-48">
       <div className="container-page">
-        <Reveal className="relative overflow-hidden rounded-[2.5rem] bg-ink-glow px-7 py-14 sm:px-12 lg:px-16 lg:py-16">
-          <div className="grid items-center gap-12 lg:grid-cols-[auto_1fr_auto]">
+        <Reveal className="relative overflow-hidden rounded-[2.5rem] bg-ink-glow px-8 py-20 sm:px-14 lg:px-20 lg:py-28">
+          <div className="grid items-center gap-14 lg:grid-cols-[auto_1fr_auto] lg:gap-16">
             <div className="relative mx-auto h-44 w-64 shrink-0">
               <div className="absolute left-0 top-4 h-36 w-24 -rotate-6 rounded-2xl border-2 border-ink-foreground/70 bg-ink-soft" />
               <img src={images.trip} alt="" width={1024} height={1024} loading="lazy" className="absolute left-1/2 top-0 h-40 w-28 -translate-x-1/2 rounded-2xl border-2 border-ink-foreground/80 object-cover shadow-lift" />

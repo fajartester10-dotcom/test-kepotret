@@ -32,3 +32,6 @@ use the editor.
 ## Project rules
 - Landing page sections live in `src/components/landing/`, with all copy and tier data centralized in `content.ts` so text edits never touch layout code.
 - Brand colors, gradients and shadows are tokens/utilities in `src/styles.css`; components use only those token classes.
+- Theming is class-based (`.dark` on `<html>`): every color token has a `.dark` override in `src/styles.css`, an inline head script in `__root.tsx` applies the saved theme before paint, and `src/lib/theme.ts` owns toggling — so components never need `dark:` color overrides.
+- Use `text-foreground` for page text and `bg-contrast`/`text-contrast-foreground` for inverse chips; `ink` is reserved for always-dark surfaces and for text on lime, because `ink` does not flip in dark mode.
+- The AI assistant streams through the `/api/chat` server route (`src/lib/ai/*.server.ts`) with the system prompt built from `content.ts`, so the bot's facts stay in sync with page copy; the chat window is lazy-loaded so the landing page stays light.

@@ -63,6 +63,9 @@
   --color-sky-strong: var(--sky-strong);
   --color-sky-deep: var(--sky-deep);
   --color-overlay: var(--overlay);
+  --color-contrast: var(--contrast);
+  --color-contrast-soft: var(--contrast-soft);
+  --color-contrast-foreground: var(--contrast-foreground);
 
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -103,6 +106,11 @@
   --sky-deep: oklch(0.6 0.13 237);
 
   --overlay: oklch(0.145 0 0 / 55%);
+
+  /* Inverse chip: ink on light, lime on dark */
+  --contrast: var(--ink);
+  --contrast-soft: var(--ink-soft);
+  --contrast-foreground: var(--lime);
 
   --background: oklch(1 0 0);
   --foreground: var(--ink);
@@ -162,6 +170,72 @@
   --sidebar-ring: var(--ring);
 }
 
+/*
+ * Dark theme: deep ink surfaces with a cool blue undertone, lime stays the accent.
+ * Same token names as :root so every component flips without per-component overrides.
+ */
+.dark {
+  color-scheme: dark;
+
+  --ink: oklch(0.12 0.006 250);
+  --ink-soft: oklch(0.2 0.012 250);
+  --ink-muted: oklch(0.72 0.012 250);
+  --lime-deep: var(--lime);
+  --lime-tint: oklch(0.938 0.204 119.6 / 14%);
+
+  --sky: oklch(0.27 0.035 242);
+  --sky-soft: oklch(0.215 0.018 248);
+  --sky-strong: oklch(0.36 0.06 238);
+  --sky-deep: oklch(0.8 0.1 232);
+
+  --overlay: oklch(0.08 0.005 250 / 70%);
+
+  --contrast: var(--lime);
+  --contrast-soft: oklch(0.88 0.19 119.6);
+  --contrast-foreground: oklch(0.145 0 0);
+
+  --background: oklch(0.165 0.01 250);
+  --foreground: oklch(0.97 0.004 240);
+  --card: oklch(0.2 0.012 250);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.2 0.012 250);
+  --popover-foreground: var(--foreground);
+  --secondary: var(--sky-soft);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.225 0.012 250);
+  --muted-foreground: oklch(0.72 0.014 250);
+  --accent: oklch(0.938 0.204 119.6 / 12%);
+  --accent-foreground: var(--foreground);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 13%);
+  --ring: var(--sky-deep);
+
+  --gradient-hero:
+    radial-gradient(60% 55% at 85% 10%, oklch(0.6 0.13 237 / 22%), transparent 70%),
+    radial-gradient(45% 40% at 5% 30%, oklch(0.938 0.204 119.6 / 6%), transparent 70%),
+    linear-gradient(180deg, oklch(0.165 0.01 250) 0%, oklch(0.18 0.016 248) 100%);
+  --gradient-sky: linear-gradient(180deg, oklch(0.165 0.01 250) 0%, oklch(0.19 0.018 248) 100%);
+  --gradient-sky-reverse: linear-gradient(180deg, oklch(0.19 0.018 248) 0%, oklch(0.165 0.01 250) 100%);
+  --gradient-lime-sky: linear-gradient(
+    120deg,
+    oklch(0.26 0.045 122) 0%,
+    oklch(0.21 0.02 180) 45%,
+    oklch(0.23 0.035 240) 100%
+  );
+  --gradient-ink:
+    radial-gradient(50% 60% at 90% 0%, oklch(0.938 0.204 119.6 / 8%), transparent 70%),
+    radial-gradient(40% 50% at 0% 100%, oklch(0.6 0.13 237 / 16%), transparent 70%),
+    var(--ink);
+
+  --shadow-soft-value: 0 1px 2px oklch(0 0 0 / 30%), 0 4px 16px -6px oklch(0 0 0 / 40%);
+  --shadow-card-value: 0 2px 4px oklch(0 0 0 / 25%), 0 18px 40px -18px oklch(0 0 0 / 60%);
+  --shadow-lift-value: 0 30px 60px -24px oklch(0 0 0 / 70%);
+  --shadow-glow-value: 0 10px 30px -10px oklch(0.938 0.204 119.6 / 45%);
+
+  --sidebar: oklch(0.2 0.012 250);
+  --sidebar-foreground: var(--foreground);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -207,11 +281,14 @@
 
 @utility container-page {
   width: 100%;
-  max-width: 76rem;
+  max-width: 82rem;
   margin-inline: auto;
-  padding-inline: 1.25rem;
+  padding-inline: 1.5rem;
   @media (min-width: 640px) {
-    padding-inline: 2rem;
+    padding-inline: 2.5rem;
+  }
+  @media (min-width: 1024px) {
+    padding-inline: 4rem;
   }
 }
 
@@ -282,6 +359,27 @@
     opacity: 1;
     transform: none;
   }
+}
+
+/* Theme switch: crossfade colors briefly (fallback when View Transitions are unavailable). */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease,
+    fill 0.5s ease,
+    stroke 0.5s ease,
+    box-shadow 0.5s ease !important;
+}
+
+/* Theme switch: circular reveal driven from the toggle (see theme.ts). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -10,9 +10,9 @@ export function HowItWorksDialog({ children }: { children: ReactNode }) {
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="max-h-[90vh] max-w-2xl overflow-y-auto rounded-3xl border-border p-0 sm:rounded-3xl">
-        <div className="bg-sky-fade px-6 pb-6 pt-8 sm:px-8">
+        <div className="bg-sky-fade px-7 pb-8 pt-10 sm:px-10">
           <span className="eyebrow text-lime-deep">Cara Kerja</span>
-          <DialogTitle className="mt-3 text-2xl font-semibold tracking-tight text-ink">
+          <DialogTitle className="mt-3 text-2xl font-semibold tracking-tight text-foreground">
             Dari QR ke album dalam 3 langkah.
           </DialogTitle>
           <DialogDescription className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -21,7 +21,7 @@ export function HowItWorksDialog({ children }: { children: ReactNode }) {
           </DialogDescription>
         </div>
 
-        <div className="space-y-8 px-6 pb-8 sm:px-8">
+        <div className="space-y-10 px-7 pb-10 sm:px-10">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
               Untuk penyelenggara
@@ -36,7 +36,7 @@ export function HowItWorksDialog({ children }: { children: ReactNode }) {
                     {s.no}
                   </span>
                   <div className="min-w-0">
-                    <p className="font-semibold text-ink">{s.title}</p>
+                    <p className="font-semibold text-foreground">{s.title}</p>
                     <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{s.detail}</p>
                   </div>
                 </li>
@@ -52,7 +52,7 @@ export function HowItWorksDialog({ children }: { children: ReactNode }) {
               {participantSteps.map((s) => (
                 <li key={s.no} className="rounded-2xl bg-muted p-4">
                   <span className="text-xs font-bold text-lime-deep">{s.no}</span>
-                  <p className="mt-1 font-semibold text-ink">{s.title}</p>
+                  <p className="mt-1 font-semibold text-foreground">{s.title}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{s.body}</p>
                 </li>
               ))}

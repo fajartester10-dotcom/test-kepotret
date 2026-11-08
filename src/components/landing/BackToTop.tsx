@@ -32,7 +32,7 @@ export function BackToTop() {
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="Kembali ke atas"
       className={cn(
-        "group fixed bottom-6 right-6 z-40 grid h-14 w-14 place-items-center rounded-full bg-ink text-lime shadow-lift transition-all duration-500 hover:-translate-y-1",
+        "group fixed bottom-6 right-[5.5rem] z-40 grid h-14 w-14 sm:right-24 place-items-center rounded-full bg-contrast text-contrast-foreground shadow-lift transition-all duration-500 hover:-translate-y-1",
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0",
       )}
     >

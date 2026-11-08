@@ -12,6 +12,7 @@ import { Faq } from "@/components/landing/Faq";
 import { FinalCta } from "@/components/landing/FinalCta";
 import { Footer } from "@/components/landing/Footer";
 import { BackToTop } from "@/components/landing/BackToTop";
+import { ChatWidget } from "@/components/landing/ChatWidget";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,6 +53,7 @@ function Index() {
       </main>
       <Footer />
       <BackToTop />
+      <ChatWidget />
     </div>
   );
 }
