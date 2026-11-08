@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -16,12 +16,23 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        brand:
+          "rounded-full bg-lime text-ink font-semibold shadow-glow hover:-translate-y-0.5 hover:shadow-lift active:translate-y-0 [&_svg]:transition-transform hover:[&_svg]:translate-x-0.5",
+        ink: "rounded-full bg-ink text-ink-foreground font-semibold hover:-translate-y-0.5 hover:bg-ink-soft hover:shadow-lift active:translate-y-0",
+        soft: "rounded-full border border-border bg-background/70 text-ink font-medium backdrop-blur hover:border-sky-strong hover:bg-sky-soft",
+        "ghost-ink":
+          "rounded-full text-ink font-medium hover:bg-sky-soft [&_svg]:transition-transform hover:[&_svg]:translate-x-0.5",
+        "outline-light":
+          "rounded-full border border-ink-foreground/20 text-ink-foreground font-medium hover:border-lime hover:text-lime",
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
+        pill: "h-11 px-6 text-sm",
+        "pill-lg": "h-12 px-7 text-[0.95rem]",
+        "pill-sm": "h-9 px-4 text-xs",
       },
     },
     defaultVariants: {
