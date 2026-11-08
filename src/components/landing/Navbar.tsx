@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 import { nav } from "./content";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,13 +29,13 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-40 transition-all duration-300",
-        scrolled ? "py-2" : "py-4",
+        scrolled ? "py-3" : "py-6",
       )}
     >
       <div className="container-page">
         <nav
           className={cn(
-            "grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 rounded-full px-4 py-2 transition-all duration-300 lg:grid-cols-[1fr_auto_1fr]",
+            "grid grid-cols-[minmax(0,1fr)_auto] items-center gap-6 rounded-full px-5 py-2.5 transition-all duration-300 lg:grid-cols-[1fr_auto_1fr]",
             scrolled
               ? "border border-border bg-background/80 shadow-card backdrop-blur-xl"
               : "border border-transparent bg-transparent",
@@ -45,7 +46,7 @@ export function Navbar() {
             <Logo />
           </div>
 
-          <ul className="hidden items-center gap-1 lg:flex">
+          <ul className="hidden items-center gap-2 lg:flex">
             {nav.map((item) => (
               <li key={item.href}>
                 <a
@@ -58,7 +59,8 @@ export function Navbar() {
             ))}
           </ul>
 
-          <div className="flex items-center justify-end gap-2">
+          <div className="flex items-center justify-end gap-2 sm:gap-3">
+            <ThemeToggle />
             <button
               type="button"
               onClick={() => setLang((l) => (l === "ID" ? "EN" : "ID"))}
@@ -108,7 +110,7 @@ export function Navbar() {
         />
         <div
           className={cn(
-            "absolute inset-x-3 top-3 rounded-3xl border border-border bg-background p-5 shadow-lift transition-all duration-300",
+            "absolute inset-x-3 top-3 rounded-3xl border border-border bg-background p-6 shadow-lift transition-all duration-300",
             open ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0",
           )}
         >
@@ -137,7 +139,7 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="mt-4 flex items-center gap-2">
+          <div className="mt-6 flex items-center gap-2">
             <button
               type="button"
               onClick={() => setLang((l) => (l === "ID" ? "EN" : "ID"))}
