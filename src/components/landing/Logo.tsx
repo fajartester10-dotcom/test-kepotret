@@ -13,8 +13,8 @@ export function Logo({ tone = "dark", className }: { tone?: "dark" | "light"; cl
       aria-label={`${brand} beranda`}
     >
       <span className="relative grid h-8 w-8 place-items-center rounded-xl bg-contrast text-contrast-foreground transition-transform duration-300 group-hover:rotate-6">
-        <span className="h-3 w-3 rounded-full border-2 border-lime" />
-        <span className="absolute right-1.5 top-1.5 h-1 w-1 rounded-full bg-lime" />
+        <span className="h-3 w-3 rounded-full border-2 border-contrast-foreground" />
+        <span className="absolute right-1.5 top-1.5 h-1 w-1 rounded-full bg-contrast-foreground" />
       </span>
       <span>
         {brand}
