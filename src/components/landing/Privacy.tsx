@@ -9,7 +9,7 @@ const icons = [ShieldCheck, EyeOff, Clock];
 export function Privacy() {
   return (
     <section id="keamanan" className="bg-sky-fade-reverse py-32 sm:py-40 lg:py-52">
-      <div className="container-page grid gap-16 lg:grid-cols-[0.9fr_1.4fr] lg:gap-24 lg:items-center">
+      <div className="container-page grid gap-16 lg:grid-cols-[0.8fr_1.5fr] lg:gap-16 xl:gap-24 lg:items-center">
         <Reveal>
           <SectionHeading
             eyebrow="Privasi & Keamanan"
