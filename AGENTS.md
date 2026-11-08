@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Landing page sections live in `src/components/landing/`, with all copy and tier data centralized in `content.ts` so text edits never touch layout code.
+- Brand colors, gradients and shadows are tokens/utilities in `src/styles.css`; components use only those token classes.
