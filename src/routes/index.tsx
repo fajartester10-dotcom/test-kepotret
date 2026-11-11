@@ -11,7 +11,6 @@ import { Privacy } from "@/components/landing/Privacy";
 import { Faq } from "@/components/landing/Faq";
 import { FinalCta } from "@/components/landing/FinalCta";
 import { Footer } from "@/components/landing/Footer";
-import { BackToTop } from "@/components/landing/BackToTop";
 import { ChatWidget } from "@/components/landing/ChatWidget";
 
 export const Route = createFileRoute("/")({
@@ -52,7 +51,6 @@ function Index() {
         <FinalCta />
       </main>
       <Footer />
-      <BackToTop />
       <ChatWidget />
     </div>
   );
