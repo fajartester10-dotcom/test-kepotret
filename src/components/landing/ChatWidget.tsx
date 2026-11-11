@@ -1,7 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import { X } from "lucide-react";
+import { Bot, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import assistantMark from "@/assets/chat-assistant.png";
 
 // The chat window (AI toolkit + markdown renderer) loads only when first opened.
 const ChatPanel = lazy(() => import("./ChatPanel"));
@@ -57,11 +56,8 @@ export function ChatWidget() {
         >
           Tanya asisten
         </span>
-        <img
-          src={assistantMark}
-          alt=""
-          width={160}
-          height={160}
+        <Bot
+          aria-hidden="true"
           className={cn(
             "h-9 w-9 transition-all duration-300 group-hover:rotate-[-8deg] group-hover:scale-110",
             open ? "scale-50 opacity-0" : "scale-100 opacity-100",
