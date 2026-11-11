@@ -49,7 +49,7 @@ export function ChatWidget() {
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? "Tutup asisten" : "Tanya asisten Kapotret"}
         aria-expanded={open}
-        className="group fixed bottom-6 right-4 z-50 grid h-14 w-14 place-items-center rounded-full bg-lime p-0 text-ink shadow-lift ring-[6px] ring-lime/20 transition-all duration-300 hover:-translate-y-1 hover:bg-lime hover:text-ink hover:shadow-glow sm:right-6"
+        className="group fixed bottom-6 right-4 z-50 grid h-14 w-14 place-items-center rounded-full bg-lime p-0 text-ink shadow-lift ring-[6px] ring-lime/20 transition-all duration-300 hover:-translate-y-1 hover:bg-lime hover:text-ink hover:shadow-glow sm:right-6 [&_svg]:size-6"
       >
         <span
           className={cn(
