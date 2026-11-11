@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Bot, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 // The chat window (AI toolkit + markdown renderer) loads only when first opened.
 const ChatPanel = lazy(() => import("./ChatPanel"));
@@ -41,12 +42,14 @@ export function ChatWidget() {
         )}
       </div>
 
-      <button
+      <Button
+        variant="ghost"
+        size="icon"
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? "Tutup asisten" : "Tanya asisten Kapotret"}
         aria-expanded={open}
-        className="group fixed bottom-6 right-4 z-50 grid h-14 w-14 place-items-center rounded-full bg-ink text-ink-foreground shadow-lift ring-1 ring-border transition-all duration-300 hover:-translate-y-1 hover:shadow-glow sm:right-6"
+        className="group fixed bottom-6 right-4 z-50 grid h-14 w-14 place-items-center rounded-full bg-lime p-0 text-ink shadow-lift ring-[6px] ring-lime/20 transition-all duration-300 hover:-translate-y-1 hover:bg-lime hover:text-ink hover:shadow-glow sm:right-6"
       >
         <span
           className={cn(
@@ -58,18 +61,20 @@ export function ChatWidget() {
         </span>
         <Bot
           aria-hidden="true"
+          strokeWidth={3}
           className={cn(
-            "h-9 w-9 transition-all duration-300 group-hover:rotate-[-8deg] group-hover:scale-110",
+            "size-6 transition-all duration-300 group-hover:rotate-[-8deg] group-hover:scale-110",
             open ? "scale-50 opacity-0" : "scale-100 opacity-100",
           )}
         />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-0.5 top-0 size-3.5 rounded-full border-2 border-ink-foreground bg-ink" />
         <X
           className={cn(
             "absolute h-5 w-5 transition-all duration-300",
             open ? "rotate-0 opacity-100" : "-rotate-90 opacity-0",
           )}
         />
-      </button>
+      </Button>
     </>
   );
 }
